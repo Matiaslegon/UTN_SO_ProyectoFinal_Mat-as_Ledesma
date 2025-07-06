@@ -4,7 +4,33 @@
     <meta charset="UTF-8" />
     <title>Estudiantes</title>
     <link rel="stylesheet" href="styles_modern.css" />
+    <input type="text" id="nameInput" placeholder="Escribí tu nombre" />
+<button id="greetBtn">Saludarme</button>
+<p id="greetingMessage"></p>
   </head>
+  <script>
+  const btn = document.getElementById('greetBtn');
+  const input = document.getElementById('nameInput');
+  const message = document.getElementById('greetingMessage');
+
+  btn.addEventListener('click', () => {
+    const name = input.value.trim();
+    if (!name) {
+      message.textContent = 'Por favor, escriba tu nombre.';
+      return;
+    }
+
+    fetch(`/greet?name=${encodeURIComponent(name)}`)
+      .then(response => response.json())
+      .then(data => {
+        message.textContent = data.message;
+      })
+      .catch(err => {
+        message.textContent = 'Error al obtener el saludo.';
+        console.error(err);
+      });
+  });
+</script>
   <body>
     <h1>Lista de Estudiantes</h1>
     <button id="loadButton">Cargar Estudiantes</button>
