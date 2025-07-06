@@ -20,5 +20,8 @@ app.get("/api/students", async (req, res) => {
   }
 });
 
+app.get('/greet', (req, res) => {res.json({ message: `¡Hola, Matías` });});
+
+
 // Start the server
 app.listen(port, () => console.log(`App running on port ${port}`));
