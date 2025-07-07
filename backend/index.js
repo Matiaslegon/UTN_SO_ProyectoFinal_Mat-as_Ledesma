@@ -1,10 +1,13 @@
-const express = require("express");//crea servidor
-const db = require("./db");//accede base de datos, con el postgres
+const express = require("express");
+//crea servidor
+const db = require("./db");
+//accede base de datos, con el postgres
 
 
 // Define express app
 const app = express(); 
-const port = 4000; //define puerto
+const port = 4000; 
+//define puerto
 
 // Middleware to parse JSON requests
 app.use(express.json());
@@ -22,7 +25,8 @@ app.get("/api/students", async (req, res) => {
 });
 
 //aca es la ruta de saludo
-app.get('/greet', (req, res) => {res.json({ message: `¡Hola, ${name}` });}); //devuelve el nombre qye ingreso
+app.get('/greet', (req, res) => {res.json({ message: `¡Hola, ${name}` });}); 
+//devuelve el nombre qye ingreso
 
 
 // Start the server
