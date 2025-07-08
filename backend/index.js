@@ -24,7 +24,7 @@ app.get("/api/students", async (req, res) => {
   }
 });
 
-fetch(`http://localhost:4000/greet?name=${encodeURIComponent(name)}`);
+
 
 app.get('/greet', (req, res) => {
   const name = req.query.name; // Obtiene el nombre de la URL (/greet?name=...)
