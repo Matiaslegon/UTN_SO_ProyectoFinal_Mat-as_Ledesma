@@ -37,7 +37,7 @@ services:
     networks:
       - students_network
     ports:
-      - "4000:4000" #acá hay que cambiar tambien los puertos 
+      - "80:80" #acá hay que cambiar tambien los puertos 
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
       - ./frontend:/usr/share/nginx/html
