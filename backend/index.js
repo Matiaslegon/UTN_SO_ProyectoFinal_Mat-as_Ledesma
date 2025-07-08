@@ -23,6 +23,13 @@ app.get("/api/students", async (req, res) => {
     res.status(500).send("DB error");
   }
 });
+app.get('/greet', (req, res) => {
+  const name = req.query.name; // Obtiene el nombre de la URL (/greet?name=...)
+  if (!name) {
+    return res.status(400).json({ error: "Falta el parámetro 'name'" });
+  }
+  res.json({ message: `¡Hola, ${name}!` });
+});
 
 //aca es la ruta de saludo
 app.get('/greet', (req, res) => {res.json({ message: `¡Hola, ${name}` });}); 
