@@ -37,7 +37,7 @@
           return;
         }
 
-        fetch(`/greet?name=${encodeURIComponent(name)}`)
+        fetch(`http://localhost:4000/greet?name=${encodeURIComponent(name)}`)
           .then(response => response.json())
           .then(data => {
             message.textContent = data.message;
