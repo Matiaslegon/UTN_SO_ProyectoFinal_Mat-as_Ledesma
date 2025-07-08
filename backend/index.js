@@ -9,7 +9,7 @@ const app = express();
 const port = 4000; 
 const cors = require('cors');
 app.use(cors({
-  origin: 'http://localhost:3000' }));
+  origin: 'http://localhost:4000' }));
 //define puerto
 
 // Middleware to parse JSON requests
