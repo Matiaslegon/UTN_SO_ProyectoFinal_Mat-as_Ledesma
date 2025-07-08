@@ -34,10 +34,6 @@ app.get('/greet', (req, res) => {
   res.json({ message: `¡Hola, ${name}!` });
 });
 
-//aca es la ruta de saludo
-app.get('/greet', (req, res) => {res.json({ message: `¡Hola, ${name}` });}); 
-//devuelve el nombre qye ingreso
-
 
 // Start the server
 app.listen(port, () => console.log(`App running on port ${port}`));
