@@ -23,6 +23,9 @@ app.get("/api/students", async (req, res) => {
     res.status(500).send("DB error");
   }
 });
+
+fetch(`http://localhost:4000/greet?name=${encodeURIComponent(name)}`);
+
 app.get('/greet', (req, res) => {
   const name = req.query.name; // Obtiene el nombre de la URL (/greet?name=...)
   if (!name) {
