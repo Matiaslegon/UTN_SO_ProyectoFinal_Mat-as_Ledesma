@@ -7,6 +7,8 @@ const db = require("./db");
 // Define express app
 const app = express(); 
 const port = 4000; 
+const cors = require('cors');
+app.use(cors());
 //define puerto
 
 // Middleware to parse JSON requests
@@ -24,8 +26,7 @@ app.get("/api/students", async (req, res) => {
   }
 });
 
-const cors = require('cors');
-app.use(cors());
+
 
 app.get('/greet', (req, res) => {
   const name = req.query.name; // Obtiene el nombre de la URL (/greet?name=...)
