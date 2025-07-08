@@ -24,7 +24,8 @@ app.get("/api/students", async (req, res) => {
   }
 });
 
-
+const cors = require('cors');
+app.use(cors());
 
 app.get('/greet', (req, res) => {
   const name = req.query.name; // Obtiene el nombre de la URL (/greet?name=...)
